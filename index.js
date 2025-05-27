@@ -18,6 +18,14 @@ app.use("/api",  (req, res)=>{
     res.status(404).send({message:"Page not found", error}); 
 });
 
+app.get("/", (req, res)=>{
+    try {
+        res.status(200).send(" get api for demo In Role Based Access project ");
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
+})
+
 app.listen(PORT, ()=>{
     console.log(`server is listening on PORT ${PORT}`);
     dbConnect(); 
